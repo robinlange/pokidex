@@ -1,0 +1,19 @@
+<div [ngClass]="{
+     'grass': types[0].type.name === 'grass',
+     'fire': types[0].type.name === 'fire',
+     'water': types[0].type.name === 'water',
+     'electric': types[0].type.name === 'electric',
+     'bug': types[0].type.name === 'bug',
+     'normal': types[0].type.name === 'normal',
+     'poison': types[0].type.name === 'poison',
+     'ground': types[0].type.name === 'ground',
+     'fairy': types[0].type.name === 'fairy'}"
+     (click)="openDetailPopup()"
+     class="pokemon-box">
+    <img src="assets/img/bg-pokeball.svg" class="pokeball-img">
+  <img [src]="img" alt="Pokemon" class="pokemon-img">
+  <h2 class="pokemon-name"> {{name}}</h2>
+  <div class="container-pokemon-types">
+    <div *ngFor="let type of types" class="pokemon-type">{{type.type.name}}</div>
+  </div>
+</div>

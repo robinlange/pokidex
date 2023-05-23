@@ -1,0 +1,11 @@
+.pokedex-container {
+  display: grid;
+  grid-template-columns: repeat(4, 385px);
+  gap: 10px;
+}
+
+pagination-controls {
+  margin-top: 10px;
+  position: absolute;
+  left: 37%;
+}
