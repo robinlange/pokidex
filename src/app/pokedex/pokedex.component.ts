@@ -25,6 +25,7 @@ export class PokedexComponent implements OnInit {
         response.results.forEach((result: any) => {
           this.dataService.getMoreData(result.name)
             .subscribe((response: any) => {
+              console.log(response);
               this.pokemons.push(response);
               // console.log(response);
             });

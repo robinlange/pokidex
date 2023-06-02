@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {MatDialog} from "@angular/material/dialog";
 import {PokemonDetailComponent} from "./pokemon-detail/pokemon-detail.component";
 
 @Component({
