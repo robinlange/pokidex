@@ -18,20 +18,12 @@ export class PokedexComponent implements OnInit {
   }
 
   public getPokemons(): void {
-    this.dataService.getPokemons(12, this.page)
-      .subscribe((response: any) => {
-        this.totalPokemons = response.count
-
-        response.results.forEach((result: any) => {
-          this.dataService.getMoreData(result.name)
-            .subscribe((response: any) => {
-              console.log(response);
-              this.pokemons.push(response);
-              // console.log(response);
-            });
-        });
-      });
+    this.dataService.getPokemons(this.page).subscribe((response: {
+      name: string,
+      img: string,
+      types: { slot: number, type: { name: string, url: string } }
+    }) => {
+      console.log(response);
+    });
   }
-
-  protected readonly String = String;
 }
