@@ -1,11 +1,16 @@
 .pokedex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.pokedex-pokemon-container {
   display: grid;
   grid-template-columns: repeat(4, 385px);
-  gap: 10px;
+  gap: 12px;
 }
 
 pagination-controls {
-  margin-top: 10px;
-  position: absolute;
-  left: 37%;
+  font-size: 16px;
 }

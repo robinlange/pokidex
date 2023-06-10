@@ -1,4 +1,70 @@
-<h1 mat-dialog-title>{{data.name}}</h1>
-<div mat-dialog-content>
-  The Pokemons name is: {{data.name}}
-</div>
+<mat-dialog-content [ngClass]="getPokemonClasses()" class="dialog-container">
+  <nav class="detail-nav">
+    <ion-icon
+      name="arrow-back-outline"
+      class="arrow"
+      (click)="closeDialog()"
+    ></ion-icon>
+    <ion-icon
+      name="heart-outline"
+      *ngIf="!liked"
+      (click)="liked = !liked"
+    ></ion-icon>
+    <ion-icon
+      class="heart-red"
+      name="heart"
+      *ngIf="liked"
+      (click)="liked = !liked"
+    ></ion-icon>
+  </nav>
+
+  <img src="assets/img/bg-pokeball.svg" class="pokeball-img">
+  <img [src]="pokemonData.img" alt="Pokemon" class="pokemon-img">
+
+  <header class="header-container">
+    <div class="pokemon-name">
+      {{pokemonData.name}}
+    </div>
+
+    <div class="pokemon-id">
+      {{pokemonData.id | fill}}
+    </div>
+
+    <div class="container-pokemon-types">
+      <div class="pokemon-type" *ngFor="let type of pokemonData.types">
+        {{type.type.name}}
+      </div>
+    </div>
+  </header>
+
+  <section class="container-section">
+    <div class="tabs">
+      <mat-tab-group>
+        <mat-tab label="About">
+          <app-about
+            [height]="pokemonData.height"
+            [weight]="pokemonData.weight"
+            [abilities]="pokemonData.abilities"
+            [species]="'------------------------'"
+          ></app-about>
+        </mat-tab>
+        <mat-tab label="Base Stats">
+          <app-base-stats
+            [hp]="pokemonData.stats[0]"
+            [attack]="pokemonData.stats[1]"
+            [defense]="pokemonData.stats[2]"
+            [sp_attack]="pokemonData.stats[3]"
+            [sp_defense]="pokemonData.stats[4]"
+            [speed]="pokemonData.stats[5]"
+          ></app-base-stats>
+        </mat-tab>
+        <mat-tab label="Evolution">
+          <app-evolution></app-evolution>
+        </mat-tab>
+        <mat-tab label="Moves">
+          <app-moves></app-moves>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </section>
+</mat-dialog-content>

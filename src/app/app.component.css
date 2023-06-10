@@ -2,17 +2,18 @@
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto;
-  padding: 15px;
-  gap: 50px;
+  padding: 16px;
+  gap: 48px;
 }
 
 .app-header {
   grid-column: 1 / -1;
-  justify-self: center;
-  font-size: 32px;
-  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
 
-  background-color: orange;
+.app-header img {
+  height: 75px;
 }
 
 .app-sidenav {
@@ -23,7 +24,7 @@
   flex-direction: column;
   gap: 16px;
 
-  font-size: 26px;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -36,7 +37,7 @@
   grid-column: 1 / -1;
   grid-row: 3 / 4;
   justify-self: center;
-  font-size: 24px;
+  font-size: 18px;
 
   background-color: yellow;
 }

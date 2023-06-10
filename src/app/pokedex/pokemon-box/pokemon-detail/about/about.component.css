@@ -1,0 +1,18 @@
+.container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  row-gap: 12px;
+  margin-top: 24px;
+}
+
+h1 {
+  font-size: 14px;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+  font-size: 14px;
+  margin: 0;
+  color: black;
+}

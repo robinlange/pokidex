@@ -1,0 +1,58 @@
+<div class="container">
+  <h1>HP</h1>
+  <h2>{{hp}}</h2>
+  <mat-progress-bar
+    mode="determinate"
+    [color]="hp < 50 ? 'warn' : 'primary'"
+    [value]="hp"
+  ></mat-progress-bar>
+
+  <h1>Attack</h1>
+  <h2>{{attack}}</h2>
+  <mat-progress-bar
+    mode="determinate"
+    [color]="attack < 50 ? 'warn' : 'primary'"
+    [value]="attack"
+  ></mat-progress-bar>
+
+  <h1>Defense</h1>
+  <h2>{{defense}}</h2>
+  <mat-progress-bar
+    mode="determinate"
+    [color]="defense < 50 ? 'warn' : 'primary'"
+    [value]="defense"
+  ></mat-progress-bar>
+
+  <h1>Sp. Atk</h1>
+  <h2>{{sp_attack}}</h2>
+  <mat-progress-bar
+    mode="determinate"
+    [color]="sp_attack < 50 ? 'warn' : 'primary'"
+    [value]="sp_attack"
+  ></mat-progress-bar>
+
+  <h1>Sp. Def</h1>
+  <h2>{{sp_defense}}</h2>
+  <mat-progress-bar
+    mode="determinate"
+    [color]="sp_defense < 50 ? 'warn' : 'primary'"
+    [value]="sp_defense"
+  ></mat-progress-bar>
+
+  <h1>Speed</h1>
+  <h2>{{speed}}</h2>
+  <mat-progress-bar
+    mode="determinate"
+    [color]="speed < 50 ? 'warn' : 'primary'"
+    [value]="speed"
+  ></mat-progress-bar>
+
+  <h1>Total</h1>
+  <h2>{{total}}</h2>
+  <mat-progress-bar
+    mode="determinate"
+    [color]="total < 50 ? 'warn' : 'primary'"
+    [value]="total"
+  ></mat-progress-bar>
+</div>
+

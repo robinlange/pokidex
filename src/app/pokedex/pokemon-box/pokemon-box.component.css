@@ -2,60 +2,67 @@
   position: relative;
   width: 100%;
   height: 250px;
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 12px;
 }
 
 .pokemon-img {
   display: inline-block;
   position: absolute;
   max-width: 150px;
-  margin-left: 225px;
-  margin-top: 90px;
+  left: 225px;
+  top: 90px;
 }
 
 .pokeball-img {
   display: inline-block;
   position: absolute;
   max-width: 170px;
-  margin-left: 210px;
-  margin-top: 75px;
-  opacity: 15%;
-  filter: invert(90%) sepia(6%) saturate(1526%) hue-rotate(149deg) brightness(128%) contrast(98%);}
+  left: 210px;
+  top: 75px;
+  opacity: 0.15;
+  filter: invert(90%) sepia(6%) saturate(1526%) hue-rotate(149deg) brightness(128%) contrast(98%);
+}
 
 .pokemon-box:hover {
   cursor: pointer;
   transform: scale(1.03);
 }
 
+.pokemon-id {
+  font-size: 24px;
+  align-self: flex-end;
+  padding-right: 24px;
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  margin-left: 48px;
+}
+
 .pokemon-name {
   /*color: #e5fdf9;*/
   /*color: black;*/
-  font-size: 38px;
-  margin-left: 40px;
-  margin-bottom: 15px;
-  padding-top: 25px;
+  font-size: 30px;
+  margin-bottom: 24px;
 }
 
 .container-pokemon-types {
   display: flex;
   flex-direction: column;
-  font-size: 32px;
-  gap: 20px;
-  margin-left: 32px;
+  font-size: 24px;
+  gap: 16px;
 }
 
 .pokemon-type {
   width: fit-content;
-  /*background-color: rgba(229, 253, 249, 0.3);*/
   padding: 2px 25px;
-  border-radius: 25px;
+  border-radius: 100px;
 }
 
-.pokemon-type:first-letter {
-  text-transform: uppercase;
-}
-
+.pokemon-type:first-letter,
 .pokemon-name:first-letter {
   text-transform: uppercase;
 }
@@ -89,15 +96,15 @@
 }
 
 .electric .pokemon-type {
-  background-color: #FFE09C;
+  background-color: #ffe09c;
 }
 
 .bug {
-  background-color: #C3EDB3;
+  background-color: #c3edb3;
 }
 
 .bug .pokemon-type{
-  background-color: #E0F7D8;
+  background-color: #e0f7d8;
 }
 
 .normal {
@@ -109,11 +116,11 @@
 }
 
 .poison {
-  background-color: #E79CFF;
+  background-color: #e79cff;
 }
 
 .poison .pokemon-type {
-  background-color: #F4D2FF;
+  background-color: #f4d2ff;
 }
 
 .ground {
@@ -121,9 +128,9 @@
 }
 
 .ground .pokemon-type {
-  background-color: #E4E4E4;
+  background-color: #e4e4e4;
 }
 
 .fairy {
-  background-image:linear-gradient(90deg, #efbfff 0%, aquamarine 61%)
+  background-image: linear-gradient(90deg, #efbfff 0%, aquamarine 61%);
 }

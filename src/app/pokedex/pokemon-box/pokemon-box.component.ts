@@ -8,7 +8,7 @@ import {PokemonDetailComponent} from "./pokemon-detail/pokemon-detail.component"
   styleUrls: ['./pokemon-box.component.css']
 })
 export class PokemonBoxComponent implements OnInit {
-  @Input() index!: number;
+  @Input() id!: number;
   @Input() img!: string;
   @Input() name!: string;
   @Input() types!: [{slot: number, type: {name: string, url: string}}];
@@ -18,11 +18,27 @@ export class PokemonBoxComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openDetailPopup() {
+  public openDetailPopup(): void {
     this.matDialog.open(PokemonDetailComponent, {
+      panelClass: 'pokemon-detail-dialog-container',
       data: {
-        name: this.name
+        id: this.id
       }
     });
+  }
+
+  public getPokemonClasses(): any {
+    const type: string = this.types[0].type.name;
+    return {
+      'grass': type === 'grass',
+      'fire': type === 'fire',
+      'water': type === 'water',
+      'electric': type === 'electric',
+      'bug': type === 'bug',
+      'normal': type === 'normal',
+      'poison': type === 'poison',
+      'ground': type === 'ground',
+      'fairy': type === 'fairy'
+    };
   }
 }
