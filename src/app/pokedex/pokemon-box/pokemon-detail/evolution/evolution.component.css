@@ -13,10 +13,19 @@
   gap: 16px;
 }
 
+ion-icon {
+  font-size: 25px;
+}
+
 h1 {
   font-size: 20px;
   font-weight: bold;
   margin-left: 32px;
+}
+
+h5 {
+  margin: 0;
+  font-size: 16px;
 }
 
 .pokemon-img {
