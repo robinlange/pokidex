@@ -21,8 +21,6 @@ export class PokemonDetailComponent implements OnInit {
     weight: 0,
     moves: []
   };
-
-
   liked: boolean = false;
 
   constructor(

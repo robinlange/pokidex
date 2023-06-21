@@ -46,8 +46,6 @@ export class BaseStatsComponent implements OnChanges {
         this.sp_attack +
         this.sp_defense +
         this.speed;
-
-      console.log(this.total);
     }
   }
 }

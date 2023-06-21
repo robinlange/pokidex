@@ -28,3 +28,6 @@ h2 {
 mat-progress-bar {
   background-color: green;
 }
+
+progress::-webkit-progress-value { background: red; }
+

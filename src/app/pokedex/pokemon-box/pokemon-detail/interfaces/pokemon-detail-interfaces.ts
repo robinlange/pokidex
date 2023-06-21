@@ -33,3 +33,21 @@ export interface PokemonDetailData {
   types: Type[];
   weight: number;
 }
+
+export interface PokemonEvolutionData {
+  evolvesFrom: {
+    name: string,
+    img: string
+  },
+  evolvesTo: {
+    name: string,
+    img: string,
+    atLvl: number,
+    evolvesTo: {
+      name: string,
+      img: string,
+      atLvl: number
+    }
+  },
+  evolutionStates: number
+}

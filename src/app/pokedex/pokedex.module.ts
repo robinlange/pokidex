@@ -34,16 +34,16 @@ import {SharedModule} from "../shared/shared.module";
     HeightConvertPipe,
     AbilitiesConvertPipe
   ],
-  imports: [
-    CommonModule,
-    NgxPaginationModule,
-    MatDialogModule,
-    PokedexRoutingModule,
-    IonicModule,
-    MatTabsModule,
-    MatProgressBarModule,
-    SharedModule
-  ]
+    imports: [
+        CommonModule,
+        NgxPaginationModule,
+        MatDialogModule,
+        PokedexRoutingModule,
+        IonicModule,
+        MatTabsModule,
+        MatProgressBarModule,
+        SharedModule
+    ]
 })
 export class PokedexModule {
 }

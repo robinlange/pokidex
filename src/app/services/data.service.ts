@@ -17,4 +17,8 @@ export class DataService {
   public getPokemonDetail(id: number): Observable<any> {
     return this.http.get(`http://localhost:8080/pokemonDetailData?id=${id}`);
   }
+
+  public getPokemonEvolutionChain(id: number): Observable<any> {
+    return this.http.get(`http://localhost:8080/pokemonEvolutionChainData?id=${id}`);
+  }
 }

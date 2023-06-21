@@ -1,1 +1,34 @@
-<p>evolution works!</p>
+<h1>Evolution Chain</h1>
+<div class="container-row" *ngIf="evolutionChain.evolutionStates >= 2">
+  <img
+    [src]="evolutionChain.evolvesFrom.img"
+    alt="Pokemon"
+    class="pokemon-img"
+  >
+  <div class="container-column">
+    <ion-icon name="arrow-forward-outline"></ion-icon>
+    <div>Lvl {{evolutionChain.evolvesTo.atLvl}}</div>
+  </div>
+  <img
+    [src]="evolutionChain.evolvesTo.img"
+    alt="Pokemon"
+    class="pokemon-img"
+  >
+</div>
+
+<div class="container-row" *ngIf="evolutionChain.evolutionStates === 3">
+  <img
+    [src]="evolutionChain.evolvesTo.img"
+    alt="Pokemon"
+    class="pokemon-img"
+  >
+  <div class="container-column">
+    <ion-icon name="arrow-forward-outline"></ion-icon>
+    <div>Lvl {{evolutionChain.evolvesTo.evolvesTo.atLvl}}</div>
+  </div>
+  <img
+    [src]="evolutionChain.evolvesTo.evolvesTo.img"
+    alt="Pokemon"
+    class="pokemon-img"
+  >
+</div>
