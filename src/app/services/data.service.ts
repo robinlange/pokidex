@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -11,14 +12,14 @@ export class DataService {
   }
 
   public getPokemons(offset: number): Observable<any> {
-    return this.http.get(`http://localhost:8080/pokemonsData?offset=${offset}`);
+    return this.http.get(`${environment.backendURL}pokemonsData?offset=${offset}`);
   }
 
   public getPokemonDetail(id: number): Observable<any> {
-    return this.http.get(`http://localhost:8080/pokemonDetailData?id=${id}`);
+    return this.http.get(`${environment.backendURL}pokemonDetailData?id=${id}`);
   }
 
   public getPokemonEvolutionChain(id: number): Observable<any> {
-    return this.http.get(`http://localhost:8080/pokemonEvolutionChainData?id=${id}`);
+    return this.http.get(`${environment.backendURL}pokemonEvolutionChainData?id=${id}`);
   }
 }
