@@ -45,4 +45,4 @@ jobs:
 
     - name: Run the new container
       run: |
-        docker run -d --name pokidex-frontend-container -p 8282:80 robinlange/pokidex-frontend:latest
+        docker run -d --name pokidex-frontend-container -p 8282:80 --restart unless-stopped robinlange/pokidex-frontend:latest
