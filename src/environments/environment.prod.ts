@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendURL: 'http://192.168.178.53:8383/'
+  backendURL: 'https://api.lange-dev.de/'
 };
