@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendURL: 'https://api.pokidex.lange-dev.de/'
+  backendURL: 'https://api.lange-dev.de/'
 };
