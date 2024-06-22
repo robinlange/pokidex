@@ -19,13 +19,32 @@
 .app-sidenav {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-
   display: flex;
   flex-direction: column;
   gap: 16px;
-
   font-size: 24px;
   font-weight: bold;
+}
+
+.app-sidenav a {
+  padding: 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.app-sidenav a:hover {
+  background-color: #f0f0f0;
+}
+
+.app-sidenav .active {
+  background-color: #ec5c5c;
+  color: white;
+}
+
+.app-sidenav .active:hover {
+  background-color: #f0f0f0;
+  color: #ec5c5c;
 }
 
 .app-main {
@@ -37,9 +56,7 @@
   grid-column: 1 / -1;
   grid-row: 3 / 4;
   justify-self: center;
-  font-size: 18px;
-
-  background-color: yellow;
+  font-size: 14px;
 }
 
 a:link {
@@ -51,9 +68,5 @@ a:visited {
 }
 
 a:hover {
-  color: #013f8c;
-}
-
-.active {
-  color: #efbfff;
+  color: #ec5c5c;
 }
