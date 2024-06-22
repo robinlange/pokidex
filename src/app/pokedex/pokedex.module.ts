@@ -6,7 +6,6 @@ import {PokemonBoxComponent} from './pokemon-box/pokemon-box.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import {PokemonDetailComponent} from './pokemon-box/pokemon-detail/pokemon-detail.component';
 import {MatDialogModule} from "@angular/material/dialog";
-import {IdFillPipe} from "./pipes/IdFillPipe";
 import {IonicModule} from "@ionic/angular";
 import {MatTabsModule} from "@angular/material/tabs";
 import {AboutComponent} from './pokemon-box/pokemon-detail/about/about.component';
@@ -18,7 +17,7 @@ import {HeightConvertPipe} from "./pipes/HeightConvertPipe";
 import {AbilitiesConvertPipe} from "./pipes/AbilitiesConvertPipe";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {SharedModule} from "../shared/shared.module";
-import { SkeletonComponent } from './skeleton/skeleton.component';
+import { PokemonBoxSkeletonComponent } from './pokemon-box-skeleton/pokemon-box-skeleton.component';
 
 
 @NgModule({
@@ -30,11 +29,10 @@ import { SkeletonComponent } from './skeleton/skeleton.component';
     BaseStatsComponent,
     EvolutionComponent,
     MovesComponent,
-    IdFillPipe,
     WeightConvertPipe,
     HeightConvertPipe,
     AbilitiesConvertPipe,
-    SkeletonComponent
+    PokemonBoxSkeletonComponent
   ],
     imports: [
         CommonModule,

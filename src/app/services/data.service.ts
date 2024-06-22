@@ -22,4 +22,9 @@ export class DataService {
   public getPokemonEvolutionChain(id: number): Observable<any> {
     return this.http.get(`${environment.backendURL}pokemonEvolutionChainData?id=${id}`);
   }
+
+  public getItems(offset: number): Observable<any> {
+    return this.http.get(`${environment.backendURL}items?offset=${offset}`);
+
+  }
 }

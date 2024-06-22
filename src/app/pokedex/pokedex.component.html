@@ -1,6 +1,6 @@
 <div class="pokedex-container">
   <div *ngIf="fetching" class="skeleton-container">
-    <app-skeleton *ngFor="let skeleton of skeletonArray"></app-skeleton>
+    <app-pokemon-box-skeleton *ngFor="let skeleton of skeletonArray"></app-pokemon-box-skeleton>
   </div>
   <div *ngIf="!fetching" class="pokedex-pokemon-container">
     <div *ngFor="let pokemon of pokemons | paginate: {itemsPerPage: 12, currentPage: page, totalItems: totalPokemons}">

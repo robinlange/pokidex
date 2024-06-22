@@ -1,1 +1,15 @@
-<p>items works!</p>
+<div class="items-container">
+  <div *ngIf="fetching" class="skeleton-container">
+    <app-item-box-skeleton *ngFor="let skeleton of skeletonArray"></app-item-box-skeleton>
+  </div>
+  <div *ngIf="!fetching" class="items-list-container">
+    <div *ngFor="let item of items | paginate: {itemsPerPage: 12, currentPage: page, totalItems: totalItems}">
+      <app-item-box
+        [id]="item.id"
+        [img]="item.img"
+        [name]="item.name"
+        [category]="item.category"></app-item-box>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+</div>

@@ -1,0 +1,12 @@
+
+<div [ngClass]="getItemClasses()"
+    (click)="openDetailPopup()"
+     class="item-box">
+  <img src="assets/img/bg-pokeball.svg" class="pokeball-img">
+  <img [src]="img" alt="Item" class="item-img">
+  <div class="layout-container">
+    <div class="item-id">{{id | fill}}</div>
+    <h2 class="item-name">{{name}}</h2>
+    <div class="item-category">{{category}}</div>
+  </div>
+</div>

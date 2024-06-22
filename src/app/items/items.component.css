@@ -1,0 +1,24 @@
+.items-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.skeleton-container {
+  display: grid;
+  grid-template-columns: repeat(4, 385px);
+  gap: 12px;
+}
+
+.items-list-container {
+  display: grid;
+  grid-template-columns: repeat(4, 385px);
+  gap: 12px;
+}
+
+pagination-controls {
+  font-size: 16px;
+}
+
+

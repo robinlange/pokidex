@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {IdFillPipe} from "./pipes/IdFillPipe";
 
 @NgModule({
-  declarations: [],
+  declarations: [IdFillPipe],
   imports: [CommonModule],
-  exports: []
+  exports: [IdFillPipe]
 })
 export class SharedModule { }
