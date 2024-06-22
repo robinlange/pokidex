@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {DataService} from "../services/data.service";
-import {ActivatedRoute, Params, Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokedex',
@@ -12,11 +12,13 @@ export class PokedexComponent implements OnInit {
   page: number = 1;
   totalPokemons: number = 1181;
   fetching: boolean = false;
+  skeletonArray: any[] = new Array(12);
 
-  constructor(private dataService: DataService,
-              private router: Router,
-              private route: ActivatedRoute) {
-  }
+  constructor(
+    private dataService: DataService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((queryParams: Params) => {
@@ -33,23 +35,26 @@ export class PokedexComponent implements OnInit {
 
   public getPokemons(): void {
     this.fetching = true;
-    this.dataService.getPokemons((this.page - 1) * 12).subscribe((response: [{
-                                                                    id: number,
-                                                                    name: string,
-                                                                    img: string,
-                                                                    types: { slot: number, type: { name: string, url: string } }
-                                                                  }]
-    ): void => {
-      response.forEach((pokemon: {
+    this.dataService.getPokemons((this.page - 1) * 12).subscribe(
+      (response: [{
         id: number,
         name: string,
         img: string,
         types: { slot: number, type: { name: string, url: string } }
-      }): void => {
-        this.pokemons.push(pokemon);
-      })
-    });
-    this.fetching = false;
+      }]) => {
+        this.pokemons = response.map((pokemon: {
+          id: number,
+          name: string,
+          img: string,
+          types: { slot: number, type: { name: string, url: string } }
+        }) => pokemon);
+        this.fetching = false;
+      },
+      (error: any) => {
+        console.error(error);
+        this.fetching = false;
+      }
+    );
   }
 
   public onPageChange($event: number): void {

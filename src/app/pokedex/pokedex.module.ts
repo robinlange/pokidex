@@ -18,6 +18,7 @@ import {HeightConvertPipe} from "./pipes/HeightConvertPipe";
 import {AbilitiesConvertPipe} from "./pipes/AbilitiesConvertPipe";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {SharedModule} from "../shared/shared.module";
+import { SkeletonComponent } from './skeleton/skeleton.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {SharedModule} from "../shared/shared.module";
     IdFillPipe,
     WeightConvertPipe,
     HeightConvertPipe,
-    AbilitiesConvertPipe
+    AbilitiesConvertPipe,
+    SkeletonComponent
   ],
     imports: [
         CommonModule,

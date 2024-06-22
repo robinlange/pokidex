@@ -5,6 +5,12 @@
   gap: 24px;
 }
 
+.skeleton-container {
+  display: grid;
+  grid-template-columns: repeat(4, 385px);
+  gap: 12px;
+}
+
 .pokedex-pokemon-container {
   display: grid;
   grid-template-columns: repeat(4, 385px);
@@ -14,3 +20,5 @@
 pagination-controls {
   font-size: 16px;
 }
+
+

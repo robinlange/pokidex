@@ -1,4 +1,7 @@
 <div class="pokedex-container">
+  <div *ngIf="fetching" class="skeleton-container">
+    <app-skeleton *ngFor="let skeleton of skeletonArray"></app-skeleton>
+  </div>
   <div *ngIf="!fetching" class="pokedex-pokemon-container">
     <div *ngFor="let pokemon of pokemons | paginate: {itemsPerPage: 12, currentPage: page, totalItems: totalPokemons}">
       <app-pokemon-box
@@ -12,7 +15,5 @@
       <!--    [atkPower]="pokemon.stats[1].base_stat"-->
     </div>
   </div>
-
-
   <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
 </div>
