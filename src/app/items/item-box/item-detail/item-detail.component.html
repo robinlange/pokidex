@@ -1,0 +1,54 @@
+<mat-dialog-content [ngClass]="getItemClasses()" class="dialog-container">
+  <nav class="detail-nav">
+    <ion-icon
+      name="arrow-back-outline"
+      class="arrow"
+      (click)="closeDialog()"
+    ></ion-icon>
+    <ion-icon
+      name="heart-outline"
+      *ngIf="!liked"
+      (click)="liked = !liked"
+    ></ion-icon>
+    <ion-icon
+      class="heart-red"
+      name="heart"
+      *ngIf="liked"
+      (click)="liked = !liked"
+    ></ion-icon>
+  </nav>
+
+  <img src="assets/img/bg-pokeball.svg" class="pokeball-img">
+  <img [src]="itemDetailData.img" alt="Item" class="item-img">
+
+  <header class="header-container">
+    <div class="item-name">
+      {{itemDetailData.name}}
+    </div>
+
+    <div class="item-id">
+      {{itemDetailData.id | fill}}
+    </div>
+
+    <div class="container-item-categories">
+      <div class="item-category">
+        {{itemDetailData.category}}
+      </div>
+    </div>
+  </header>
+
+  <section class="container-section">
+    <div class="tabs">
+      <mat-tab-group>
+        <mat-tab label="Details">
+          <div class="item-detail">
+            <p><strong>Effect:</strong> {{itemDetailData.effect}}</p>
+            <p><strong>Short Effect:</strong> {{itemDetailData.short_effect}}</p>
+            <p><strong>Cost:</strong> {{itemDetailData.cost}}</p>
+            <p><strong>Attributes:</strong> {{itemDetailData.attributes.join(', ')}}</p>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </section>
+</mat-dialog-content>

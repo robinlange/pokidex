@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {ItemDetailComponent} from "./item-detail/item-detail.component";
 
 @Component({
   selector: 'app-item-box',
@@ -10,7 +12,7 @@ export class ItemBoxComponent implements OnInit {
   @Input() img!: string;
   @Input() name!: string;
   @Input() category!: string;
-  constructor() { }
+  constructor(private matDialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -30,7 +32,12 @@ export class ItemBoxComponent implements OnInit {
   }
 
   public openDetailPopup(): void{
-
+    this.matDialog.open(ItemDetailComponent, {
+      panelClass: 'item-detail-dialog-container',
+      data: {
+        id: this.id
+      }
+    });
   }
 
 }

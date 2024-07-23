@@ -25,6 +25,9 @@ export class DataService {
 
   public getItems(offset: number): Observable<any> {
     return this.http.get(`${environment.backendURL}items?offset=${offset}`);
+  }
 
+  public getItemDetail(id: number): Observable<any> {
+    return this.http.get(`${environment.backendURL}itemDetailData?id=${id}`);
   }
 }
